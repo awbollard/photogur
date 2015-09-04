@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  Rails.application.routes.draw do
-    get 'pictures' => 'pictures#index'
-
-    # Ignore the comments below for now
-    # They are just documentation
-  end
+  root 'pictures#index'
+  resources :pictures
   
+  delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture"
+
+  # Ignore the comments below for now
+  # They are just documentation
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
